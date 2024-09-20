@@ -1,6 +1,13 @@
 .header{
     width:100%;
     border-bottom: 1px solid #e3e3e3;
+    display:flex;
+    justify-content:center;
+}
+
+.headerContainer{
+    max-width:1400px;
+    width:100%;
 }
 
 .headerContent{
