@@ -1,3 +1,10 @@
+.root{
+    background-image: url("../images/background.jpg");
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
 main{
     display:flex;
     justify-content: center;
@@ -5,7 +12,7 @@ main{
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    
+    flex:1;
 }
 
 
@@ -13,9 +20,11 @@ main{
     display:flex;
     max-width: 1400px;
     width:100%;
+    
 }
+
 .mainContainer>*{
-    border: 1px solid red;
+    padding: 1rem;
 }
 
 .outlet{

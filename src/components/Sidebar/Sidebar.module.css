@@ -1,0 +1,30 @@
+.sidebar{
+    box-sizing: border-box;
+    background-color: rgba(0,0,0, 0.7);
+    padding: 1em;
+    border-radius: 16px;
+    height:100%;
+}
+
+.sidebarButtons{
+    display:flex;
+    width: 100%;
+    background-color:black;
+    height:2rem;
+    justify-content:center;
+}
+
+.sidebarButton{
+    flex:1;
+}
+
+.subredditList{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+    margin-top: 1em;
+}
+
+.subreddit{
+    color: white;
+}
