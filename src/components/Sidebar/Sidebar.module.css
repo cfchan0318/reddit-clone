@@ -6,17 +6,33 @@
     height:100%;
 }
 
+.sidebarTitle{
+    color: #f5f5f5;
+    font-size: 1rem;
+}
+
 .sidebarButtons{
+    border: 1px solid #111;
+    border-radius: 10px;
     display:flex;
     width: 100%;
-    background-color:black;
     height:2rem;
     justify-content:center;
 }
 
 .sidebarButton{
+    all:unset;
+    border-radius: 10px;
+    text-align:center;
     flex:1;
+    color: #f5f5f5;
 }
+
+.active{
+    background-color: #f5f5f5;
+    color: #333;
+}
+
 
 .subredditList{
     list-style-type: none; /* Remove bullets */
