@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Sidebar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleMode } from "../../slices/sidebarSlice";
+import { fetchSubreddits } from "../../slices/sidebarSlice";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     const dispatch = useDispatch();
     const mode = useSelector((state) => state.sidebar.mode);
+    const subreddits = useSelector((state) => state.sidebar.subreddits);
 
+    useEffect(() => {
+        console.log(mode);
+        dispatch(fetchSubreddits({ mode: mode }));
+    }, [mode, dispatch]);
     return (
         <div className={styles.sidebar}>
             <h2 className={styles.sidebarTitle}>Subreddits</h2>
@@ -36,8 +43,17 @@ function Sidebar() {
                     Popular
                 </button>
             </div>
+
             <ul className={styles.subredditList}>
-                <li className={styles.subreddit}>Home</li>
+                {subreddits.data?.children?.map((subreddit, i) =>
+                    subreddit.data ? (
+                        <li className={styles.subreddit}>
+                            <Link className={styles.subreddit} to={`/?subreddit=${subreddit.data.display_name}`}>{subreddit.data.display_name}</Link>
+                        </li>
+                    ) : (
+                        <div />
+                    )
+                )}
             </ul>
         </div>
     );

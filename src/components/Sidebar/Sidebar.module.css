@@ -43,4 +43,18 @@
 
 .subreddit{
     color: white;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.subreddit:visited{
+    text-decoration: none;
+}
+
+.subreddit:hover{
+    text-decoration: underline;
+}
+
+.subreddit:active{
+    text-decoration: underline;
 }
