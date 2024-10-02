@@ -6,7 +6,7 @@ export const fetchSubreddits = createAsyncThunk('sidebar/fetchSubreddits', async
   const { mode } = arg;
   try {
     const response = await getSubreddits(mode)
-    console.log('response',response)
+    
     return response;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message)
@@ -35,7 +35,6 @@ export const sidebarSlice = createSlice({
       })
       .addCase(fetchSubreddits.fulfilled, (state, action) => {
         state.subreddits.isLoading = false;
-        console.log('payload',action.payload)
         state.subreddits.data = action.payload;
       })
       .addCase(fetchSubreddits.rejected, (state, action) => {

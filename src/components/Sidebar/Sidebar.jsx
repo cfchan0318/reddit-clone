@@ -11,7 +11,6 @@ function Sidebar() {
     const subreddits = useSelector((state) => state.sidebar.subreddits);
 
     useEffect(() => {
-        console.log(mode);
         dispatch(fetchSubreddits({ mode: mode }));
     }, [mode, dispatch]);
     return (
